@@ -125,12 +125,13 @@ func TestFileExist(t *testing.T) {
 func TestFindNotExistKeys(t *testing.T) {
 	//path := "/home/learnGoroutine/file/src.log"
 	path := "/home/learnGoroutine/file/gongshang_pc_test.log"
+	dataSource := "pc"
 	var keys []string
-	for _, v := range source["pc"] {
-		keys = append(keys, v)
+	for k := range source[dataSource] {
+		keys = append(keys, k)
 	}
 	//sort.Strings(keys)
-	output, err := FindNotExistKeys(path, keys)
+	output, err := FindNotExistKeys(path, dataSource, keys)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -143,11 +144,12 @@ func TestFindNotExistKeys(t *testing.T) {
 func BenchmarkFindNotExistKeys(b *testing.B) {
 	path := "/home/learnGoroutine/file/gongshang_pc_test.log"
 	var keys []string
-	for _, v := range source["pc"] {
-		keys = append(keys, v)
+	dataSource := "mini"
+	for k := range source[dataSource] {
+		keys = append(keys, k)
 	}
 	for i := 0; i < b.N; i++ {
-		_, err := FindNotExistKeys(path, keys)
+		_, err := FindNotExistKeys(path, dataSource, keys)
 		if err != nil {
 			b.Error(err)
 			return
