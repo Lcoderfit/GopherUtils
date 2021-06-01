@@ -130,8 +130,10 @@ func TestFileExist(t *testing.T) {
 
 func TestFindNotExistKeys(t *testing.T) {
 	//path := "/home/learnGoroutine/file/src.log"
-	path := "/home/learnGoroutine/file/gongshang_pc_test.log"
-	dataSource := "pc"
+	//path := "/home/learnGoroutine/file/gongshang_pc.log"
+	//dataSource := "pc"
+	path := "/home/learnGoroutine/file/gongshang_diqu.log"
+	dataSource := "diqu"
 	var keys []string
 	for k := range source[dataSource] {
 		keys = append(keys, k)
