@@ -6,6 +6,12 @@ import (
 	"reflect"
 )
 
+/*
+获取函数入参出参、和结构体内函数时用reflect.TypeOf()
+其他情况下，需要操作值时用reflect.ValueOf()
+获取函数信息有关的用TypeOf, 调用值有关的用ValueOf
+ */
+
 func main() {
 	u := User{
 		Name:    "robert lu",
