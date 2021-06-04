@@ -7,6 +7,11 @@ import (
 
 func main() {
 	invoke(Add, 1, 2)
+	m := Math{
+		a: 10,
+		b: 2,
+	}
+	invokeMethod(m, "Add")
 }
 
 func Add(a, b int) int {
@@ -72,4 +77,17 @@ func (m Math) Div() int {
 	return m.a / m.b
 }
 
-
+// 通过反射调用接收器的方法
+func invokeMethod(obj interface{}, name string, args ...interface{}) {
+	v := reflect.ValueOf(obj)
+	m := v.MethodByName(name)
+	argV := make([]reflect.Value, 0, len(args))
+	for _, arg := range args {
+		argV = append(argV, reflect.ValueOf(arg))
+	}
+	retList := m.Call(argV)
+	fmt.Println("ret: ")
+	for _, ret := range retList {
+		fmt.Println(ret.Interface())
+	}
+}
