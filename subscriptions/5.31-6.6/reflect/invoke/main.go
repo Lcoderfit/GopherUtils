@@ -81,7 +81,7 @@ func (m Math) Div() int {
 func invokeMethod(obj interface{}, name string, args ...interface{}) {
 	v := reflect.ValueOf(obj)
 	m := v.MethodByName(name)
-	argV := make([]reflect.Value, 0, len(args))
+	argVge  := make([]reflect.Value, 0, len(args))
 	for _, arg := range args {
 		argV = append(argV, reflect.ValueOf(arg))
 	}
