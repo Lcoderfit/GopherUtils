@@ -1,7 +1,9 @@
+/*
+1.获取不同分支的包：go get -u -v github.com/rif/cache2go@muesli
+ */
 package main
 
 import (
-	"GopherUtils/binaryutils"
 	"fmt"
 	"math"
 )
@@ -37,6 +39,9 @@ func main() {
 	//	})
 	//	fmt.Println()
 	//}
+	// https://mp.weixin.qq.com/s/dgVv6p8HQtc-krPGEdU2cQ
+	// https://mp.weixin.qq.com/s/ysOlv8xsc7wF7cPcV5pu7g
+	// https://mp.weixin.qq.com/s/qFAtgpbAsHSPVLuo3PYIhg
 
 	//filePath := "log/log"
 	//src, err := os.OpenFile(filePath, os.O_RDWR|os.O_CREATE, 0755)
@@ -48,9 +53,14 @@ func main() {
 
 	// 判断系统内存排序是大端序还是小端序
 	// go:generate fmt.Println("asdlfkj")
-	binaryutils.SystemEndian()
-	fmt.Println()
-	binaryutils.TestBigEndian()
+
+	//binaryutils.SystemEndian()
+	//fmt.Println()
+	//binaryutils.TestBigEndian()
+
+	a := []int{1, 2, 3}
+	fmt.Printf("%v, %p\n", a, a)
+	fmt.Printf("%v, %p, %v", a[:0], a[:0], cap(a[:0]))
 }
 
 func BitOpr1() {
