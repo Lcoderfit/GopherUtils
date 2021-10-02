@@ -26,6 +26,9 @@ import (
 	3.2 flag.Type用于解析Type类型的变量，返回Type类型变量的指针，传入的第一个参数是选项名，第二个是默认值，第三个是含义
 	3.3 flag.TypeVar() 传入Type类型变量指针，将解析后的选项值赋予该指针对应的变量，
 					传入第一个参数为Type类型的变量指针,第二个参数是选项名，第三个参数是默认值，第四个参数是含义
+4.go build -o m.exe main.go
+	对main.go进行编译，在当前目录下生成m.exe可执行文件(注意windows下必须带上.exe后缀，因为这样windows才能识别为可执行文件;Linux不用)
+	注意：是在当前运行go build命令的目录下生成m.exe，而不是与main.go在同一级目录下
 */
 
 type interval []time.Duration
