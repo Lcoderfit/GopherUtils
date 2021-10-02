@@ -76,6 +76,10 @@ import "GopherUtils/dailylib/cobera/get-started/cmd"
 5.helpers
 	一般不定义子命令，而用来编写一些辅助函数，供其他命令调用
 
+6.go build -o m.exe main.go
+	6.1 首先m.exe是会在使用命令的目录下生成
+	6.2 生成了m.exe之后，m.exe就相当于是root命令，如果需要调用子命令，例如clone子命令，直接 m.exe clone xxx即可
+
 */
 
 func main() {
