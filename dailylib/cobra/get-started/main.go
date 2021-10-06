@@ -4,7 +4,7 @@ import "GopherUtils/dailylib/cobera/get-started/cmd"
 
 /*
 1.创建cobra命令系统的流程
-	1.1 在项目跟目录下创建cmd目录和main.go文件
+	1.1 在项目根目录下创建cmd目录和main.go文件
 	1.2 在cmd目录下创建root.go文件，然后有如下定义:
 		var rootCmd = &cobra.Command{
 			Use: "git",
