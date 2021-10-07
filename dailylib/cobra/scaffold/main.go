@@ -76,10 +76,13 @@ limitations under the License.
 	返回count个s拼接后的结果，如果count为0，则返回空字符串
 
 
-5.Cobra还包含钩子函数（在Run之前或之后执行某些操作），
+5.cobra还包含钩子函数（在Run之前或之后执行某些操作），
 	5.1 钩子函数：https://github.com/spf13/cobra/blob/master/user_guide.md#prerun-and-postrun-hooks
 	5.2 生成文档：https://github.com/spf13/cobra/blob/master/doc/yaml_docs.md
 
+6.viper/cobra
+	cobra是眼镜蛇
+	viper是蝰蛇
 */
 package main
 
