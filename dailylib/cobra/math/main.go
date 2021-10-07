@@ -1,6 +1,6 @@
 package main
 
-import "GopherUtils/dailylib/cobera/math/cmd"
+import "GopherUtils/dailylib/cobra/math/cmd"
 
 /*
 1.result := make([]float64, 0, len(args))

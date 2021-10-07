@@ -1,6 +1,6 @@
 package main
 
-import "GopherUtils/dailylib/cobera/get-started/cmd"
+import "GopherUtils/dailylib/cobra/get-started/cmd"
 
 /*
 1.创建cobra命令系统的流程
