@@ -2,7 +2,9 @@ package main
 
 import (
 	"flag"
+	"fmt"
 )
+
 /*
 1.flag.Type() （下面以flag.Int("i", 0, "flag of int")为例）
 	1.1 Type指代各种基本类型：int，bool，string...), 返回Type类型的指针(*Type)
@@ -16,7 +18,11 @@ import (
 		-flag=x // 支持任意类型
 		注意：-flag格式只支持bool类型的选项，-flag x格式不支持bool类型的选项，如果要显示设置bool类型选项的值，用-flag=x格式
 	2.3 当遇到第一个非选项参数时，解析就会停止
-		go run main.go fuck -i 10  // 由于fuck
+		go run main.go fuck -i 10  // 由于fuck为非选项参数，所以会导致后面的-i选失效
+	2.4 取值为true和false可以输入：
+		2.4.1 取值为true的：1 t T true True TRUE
+		2.4.2 取值为false的：0 f F false False FALSE
+	2.5 整型选项值，只要传入的是strconv.ParseInt可以接收的值，flag就能解析（十进制，八进制0664， 十六进制0x123均可以）
 
 3.flag.Args() flag.NArg() flag.NFlag() flag.Arg(i)
 	3.1 flag.Args()返回所有非标志（non-flag）参数 例如： go run main.go -i 10 20 30 则非标志参数为[20 30]
@@ -25,7 +31,7 @@ import (
 	3.2 flag.NFlag() 返回所有标志参数的个数
 	3.3 flag.NArg() 返回所有非标志参数的个数
 	3.4 flag.Arg(i) 返回传入的第i个非标志参数
- */
+*/
 
 var (
 	intFlag    *int
@@ -52,16 +58,4 @@ func main() {
 	for i := 0; i < flag.NArg(); i++ {
 		fmt.Println(flag.Arg(i))
 	}
-
-	//a := []int{2,4,6,8,10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48}
-	//ch := make(chan int, len(a))
-	//for _, v := range a {
-	//	v := v
-	//	go func() {
-	//		ch <- v * 2
-	//	}()
-	//}
-	//for i := 0; i < len(a); i++ {
-	//	fmt.Println(<-ch)
-	//}
 }
